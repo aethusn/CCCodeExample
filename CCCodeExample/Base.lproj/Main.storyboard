@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QcR-Vl-y7R">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photos View Controller-->
+        <scene sceneID="h5v-fq-MTR">
+            <objects>
+                <viewController id="QcR-Vl-y7R" customClass="PhotosViewController" customModule="CCCodeExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w84-ai-CVS"/>
+                        <viewControllerLayoutGuide type="bottom" id="aU1-OW-DFo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2hf-jV-Ptf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rUC-zd-MOu">
+                                <rect key="frame" x="0.0" y="20" width="600" height="534"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uyK-85-xbO">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="Heh-uH-AFM" customClass="ShadowCollectionViewCell" customModule="CCCodeExample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4Y-uF-6cw" customClass="RoundedImageView" customModule="CCCodeExample" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="10" width="130" height="130"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F22-ri-JRD" customClass="RotatedLabel" customModule="CCCodeExample" customModuleProvider="target">
+                                                            <rect key="frame" x="45.5" y="55.5" width="39.5" height="19.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                                    <real key="value" value="45"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="F22-ri-JRD" firstAttribute="centerX" secondItem="U4Y-uF-6cw" secondAttribute="centerX" id="dPq-dI-dXU"/>
+                                                        <constraint firstItem="F22-ri-JRD" firstAttribute="centerY" secondItem="U4Y-uF-6cw" secondAttribute="centerY" id="zzg-LU-3Bc"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="border">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="U4Y-uF-6cw" secondAttribute="bottom" constant="10" id="CVr-fP-qwb"/>
+                                            <constraint firstItem="U4Y-uF-6cw" firstAttribute="leading" secondItem="Heh-uH-AFM" secondAttribute="leading" constant="10" id="Ck4-ji-CYl"/>
+                                            <constraint firstItem="U4Y-uF-6cw" firstAttribute="top" secondItem="Heh-uH-AFM" secondAttribute="top" constant="10" id="ZaY-rV-6D5"/>
+                                            <constraint firstAttribute="trailing" secondItem="U4Y-uF-6cw" secondAttribute="trailing" constant="10" id="qkC-bu-URs"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="imageView" destination="U4Y-uF-6cw" id="VY4-DT-FL1"/>
+                                            <outlet property="titleLabel" destination="F22-ri-JRD" id="Agh-Ia-h1a"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="QcR-Vl-y7R" id="9DN-Mu-Dlp"/>
+                                    <outlet property="delegate" destination="QcR-Vl-y7R" id="DsU-pP-h0c"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wm-Af-3Nj">
+                                <rect key="frame" x="502" y="562" width="78" height="30"/>
+                                <state key="normal" title="Re-arrange"/>
+                                <connections>
+                                    <action selector="reArrangePhotos:" destination="QcR-Vl-y7R" eventType="touchUpInside" id="hbb-9c-Zee"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rUC-zd-MOu" secondAttribute="trailing" id="3es-ns-Ijk"/>
+                            <constraint firstItem="aU1-OW-DFo" firstAttribute="top" secondItem="6wm-Af-3Nj" secondAttribute="bottom" constant="8" symbolic="YES" id="EIv-FH-uhS"/>
+                            <constraint firstItem="6wm-Af-3Nj" firstAttribute="top" secondItem="rUC-zd-MOu" secondAttribute="bottom" constant="8" symbolic="YES" id="Hs5-VE-ZfY"/>
+                            <constraint firstItem="rUC-zd-MOu" firstAttribute="leading" secondItem="2hf-jV-Ptf" secondAttribute="leading" id="agD-Uq-EyJ"/>
+                            <constraint firstItem="6wm-Af-3Nj" firstAttribute="trailing" secondItem="2hf-jV-Ptf" secondAttribute="trailingMargin" id="ryv-94-KXl"/>
+                            <constraint firstItem="rUC-zd-MOu" firstAttribute="top" secondItem="w84-ai-CVS" secondAttribute="bottom" id="vfF-Os-Uh1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="rUC-zd-MOu" id="SfZ-9J-qIK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0b-Nf-LR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="338"/>
+        </scene>
+    </scenes>
+</document>
